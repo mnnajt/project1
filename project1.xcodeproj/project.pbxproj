@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		5AB5AD70225F5547009A6C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD6F225F5547009A6C65 /* AppDelegate.swift */; };
 		5AB5AD72225F5547009A6C65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD71225F5547009A6C65 /* ViewController.swift */; };
-		5AB5AD75225F5547009A6C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB5AD73225F5547009A6C65 /* Main.storyboard */; };
 		5AB5AD77225F5548009A6C65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB5AD76225F5548009A6C65 /* Assets.xcassets */; };
-		5AB5AD7A225F5548009A6C65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB5AD78225F5548009A6C65 /* LaunchScreen.storyboard */; };
 		5AB5AD85225F5549009A6C65 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD84225F5549009A6C65 /* project1Tests.swift */; };
+		5AB5AD94225F5938009A6C65 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD93225F5938009A6C65 /* Endpoint.swift */; };
+		5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD95225F68DD009A6C65 /* Networking.swift */; };
+		5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */; };
+		5AB5AD9A225F7CD3009A6C65 /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		5AB5AD6C225F5547009A6C65 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB5AD6F225F5547009A6C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AB5AD71225F5547009A6C65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5AB5AD74225F5547009A6C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AB5AD76225F5548009A6C65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5AB5AD79225F5548009A6C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AB5AD7B225F5548009A6C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB5AD80225F5549009A6C65 /* project1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB5AD84225F5549009A6C65 /* project1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1Tests.swift; sourceTree = "<group>"; };
 		5AB5AD86225F5549009A6C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB5AD93225F5938009A6C65 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5AB5AD95225F68DD009A6C65 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrUserFetcher.swift; sourceTree = "<group>"; };
+		5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,12 @@
 		5AB5AD6E225F5547009A6C65 /* project1 */ = {
 			isa = PBXGroup;
 			children = (
+				5AB5AD8F225F574A009A6C65 /* Scenes */,
 				5AB5AD6F225F5547009A6C65 /* AppDelegate.swift */,
+				5AB5AD90225F576F009A6C65 /* Model */,
 				5AB5AD71225F5547009A6C65 /* ViewController.swift */,
-				5AB5AD73225F5547009A6C65 /* Main.storyboard */,
+				5AB5AD92225F58DA009A6C65 /* Utils */,
 				5AB5AD76225F5548009A6C65 /* Assets.xcassets */,
-				5AB5AD78225F5548009A6C65 /* LaunchScreen.storyboard */,
 				5AB5AD7B225F5548009A6C65 /* Info.plist */,
 			);
 			path = project1;
@@ -90,10 +95,35 @@
 		5AB5AD83225F5549009A6C65 /* project1Tests */ = {
 			isa = PBXGroup;
 			children = (
+				5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */,
 				5AB5AD84225F5549009A6C65 /* project1Tests.swift */,
 				5AB5AD86225F5549009A6C65 /* Info.plist */,
 			);
 			path = project1Tests;
+			sourceTree = "<group>";
+		};
+		5AB5AD8F225F574A009A6C65 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5AB5AD90225F576F009A6C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5AB5AD92225F58DA009A6C65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5AB5AD93225F5938009A6C65 /* Endpoint.swift */,
+				5AB5AD95225F68DD009A6C65 /* Networking.swift */,
+				5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB5AD7A225F5548009A6C65 /* LaunchScreen.storyboard in Resources */,
 				5AB5AD77225F5548009A6C65 /* Assets.xcassets in Resources */,
-				5AB5AD75225F5547009A6C65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB5AD72225F5547009A6C65 /* ViewController.swift in Sources */,
+				5AB5AD94225F5938009A6C65 /* Endpoint.swift in Sources */,
 				5AB5AD70225F5547009A6C65 /* AppDelegate.swift in Sources */,
+				5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */,
+				5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB5AD9A225F7CD3009A6C65 /* EndpointTest.swift in Sources */,
 				5AB5AD85225F5549009A6C65 /* project1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,25 +251,6 @@
 			targetProxy = 5AB5AD81225F5549009A6C65 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5AB5AD73225F5547009A6C65 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5AB5AD74225F5547009A6C65 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5AB5AD78225F5548009A6C65 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5AB5AD79225F5548009A6C65 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5AB5AD87225F5549009A6C65 /* Debug */ = {
@@ -360,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = project1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MNNAJT.project1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -377,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = project1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -386,7 +401,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MNNAJT.project1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
