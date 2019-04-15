@@ -7,3 +7,40 @@
 //
 
 import Foundation
+
+struct TumblrUserFetcher {
+    let networking: Networking
+    
+    init(networking: Networking) {
+        self.networking = networking
+    }
+    
+    public func fetch(query : String, page : Int, response: @escaping (RepositoriesResponse?) -> Void) {
+        
+        networking.request(from: Tumblr.searchRepository.pathWithInfo((query, page))) { (data, error) in
+            if let error = error {
+                print("Error received: \(error.localizedDescription)")
+                response(nil)
+            }
+            
+            let decoded = self.decodeJSON(type: RepositoriesResponse.self, from: data)
+            if let decoded = decoded {
+                print("returned: \(decoded)")
+            }
+            response(decoded)
+        }
+    }
+        
+    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+        if let data = from {
+            do {
+                let response = try JSONDecoder().decode(type.self, from: data)
+                return response
+            } catch {
+                print(error)
+            }
+        }
+
+        return nil
+    }
+}

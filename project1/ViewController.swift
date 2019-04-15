@@ -14,6 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        let fetcher : TumblrUserFetcher = TumblrUserFetcher.init(networking: Networking())
+        fetcher.fetch(query: "afnetworking", page: 0) { (response) in
+            
+            print("ok")
+        }
+        
     }
 
 

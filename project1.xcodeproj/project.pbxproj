@@ -15,6 +15,7 @@
 		5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD95225F68DD009A6C65 /* Networking.swift */; };
 		5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */; };
 		5AB5AD9A225F7CD3009A6C65 /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */; };
+		5AB5AD9C22649AE4009A6C65 /* ResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD9B22649AE4009A6C65 /* ResultResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5AB5AD95225F68DD009A6C65 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrUserFetcher.swift; sourceTree = "<group>"; };
 		5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
+		5AB5AD9B22649AE4009A6C65 /* ResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		5AB5AD90225F576F009A6C65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5AB5AD9B22649AE4009A6C65 /* ResultResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				5AB5AD72225F5547009A6C65 /* ViewController.swift in Sources */,
 				5AB5AD94225F5938009A6C65 /* Endpoint.swift in Sources */,
 				5AB5AD70225F5547009A6C65 /* AppDelegate.swift in Sources */,
+				5AB5AD9C22649AE4009A6C65 /* ResultResponse.swift in Sources */,
 				5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */,
 				5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */,
 			);

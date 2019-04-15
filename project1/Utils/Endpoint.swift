@@ -9,17 +9,18 @@
 import Foundation
 
 protocol Endpoint {
-    func pathWithInfo(_ info: String) -> String
+    
+    func pathWithInfo(_ info: (query : String, page : Int)) -> String
 }
 
 enum Tumblr {
-    case read
+    case searchRepository
 }
 
 extension Tumblr: Endpoint {
-    func pathWithInfo(_ info: String) -> String {
+    func pathWithInfo(_ info: (query: String, page: Int)) -> String {
         switch self {
-        case .read: return "https://[info].tumblr.com/api/read/json".replacingOccurrences(of: "[info]", with: info)
+        case .searchRepository: return "https://api.github.com/search/repositories?q=[info]".replacingOccurrences(of: "[info]", with: info.query) + "&per_page=15" + "&page=\(info.page)"
         }
     }
 }
