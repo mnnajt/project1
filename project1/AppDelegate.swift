@@ -47,8 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
-        self.window?.makeKeyAndVisible()
-        self.window?.rootViewController = ViewController()
+        
+        if let window = window {
+            let viewModel = SearchViewModel()
+            let viewController = SearchViewController(viewModel: viewModel)
+            
+            window.rootViewController = UINavigationController(rootViewController: viewController)
+            window.makeKeyAndVisible()
+        }
     }
 
 }
