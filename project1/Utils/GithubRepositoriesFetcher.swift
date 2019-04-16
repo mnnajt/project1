@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TumblrUserFetcher {
+struct GithubRepositoriesFetcher {
     let networking: Networking
     
     init(networking: Networking) {
@@ -17,7 +17,7 @@ struct TumblrUserFetcher {
     
     public func fetch(query : String, page : Int, response: @escaping (RepositoriesResponse?) -> Void) {
         
-        networking.request(from: Tumblr.searchRepository.pathWithInfo((query, page))) { (data, error) in
+        networking.request(from: Github.searchRepository.pathWithInfo((query, page))) { (data, error) in
             if let error = error {
                 print("Error received: \(error.localizedDescription)")
                 response(nil)

@@ -12,12 +12,13 @@
 		5AB5AD85225F5549009A6C65 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD84225F5549009A6C65 /* project1Tests.swift */; };
 		5AB5AD94225F5938009A6C65 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD93225F5938009A6C65 /* Endpoint.swift */; };
 		5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD95225F68DD009A6C65 /* Networking.swift */; };
-		5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */; };
+		5AB5AD98225F7336009A6C65 /* GithubRepositoriesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD97225F7336009A6C65 /* GithubRepositoriesFetcher.swift */; };
 		5AB5AD9A225F7CD3009A6C65 /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */; };
 		5AB5AD9C22649AE4009A6C65 /* ResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD9B22649AE4009A6C65 /* ResultResponse.swift */; };
 		5AB5AD9F2264B81C009A6C65 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5AD9E2264B81C009A6C65 /* SearchViewController.swift */; };
 		5AB5ADA12264B833009A6C65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA02264B833009A6C65 /* SearchViewModel.swift */; };
 		5AB5ADA62264C0EA009A6C65 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA52264C0EA009A6C65 /* Protocols.swift */; };
+		5AB5ADA82265D09D009A6C65 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +41,13 @@
 		5AB5AD86225F5549009A6C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB5AD93225F5938009A6C65 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5AB5AD95225F68DD009A6C65 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrUserFetcher.swift; sourceTree = "<group>"; };
+		5AB5AD97225F7336009A6C65 /* GithubRepositoriesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoriesFetcher.swift; sourceTree = "<group>"; };
 		5AB5AD99225F7CD3009A6C65 /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
 		5AB5AD9B22649AE4009A6C65 /* ResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultResponse.swift; sourceTree = "<group>"; };
 		5AB5AD9E2264B81C009A6C65 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5AB5ADA02264B833009A6C65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5AB5ADA52264C0EA009A6C65 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +131,7 @@
 			children = (
 				5AB5AD93225F5938009A6C65 /* Endpoint.swift */,
 				5AB5AD95225F68DD009A6C65 /* Networking.swift */,
-				5AB5AD97225F7336009A6C65 /* TumblrUserFetcher.swift */,
+				5AB5AD97225F7336009A6C65 /* GithubRepositoriesFetcher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 			children = (
 				5AB5AD9E2264B81C009A6C65 /* SearchViewController.swift */,
 				5AB5ADA02264B833009A6C65 /* SearchViewModel.swift */,
+				5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -249,7 +252,8 @@
 				5AB5AD70225F5547009A6C65 /* AppDelegate.swift in Sources */,
 				5AB5AD9C22649AE4009A6C65 /* ResultResponse.swift in Sources */,
 				5AB5AD96225F68DD009A6C65 /* Networking.swift in Sources */,
-				5AB5AD98225F7336009A6C65 /* TumblrUserFetcher.swift in Sources */,
+				5AB5AD98225F7336009A6C65 /* GithubRepositoriesFetcher.swift in Sources */,
+				5AB5ADA82265D09D009A6C65 /* SearchResultTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

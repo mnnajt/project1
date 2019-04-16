@@ -13,11 +13,11 @@ protocol Endpoint {
     func pathWithInfo(_ info: (query : String, page : Int)) -> String
 }
 
-enum Tumblr {
+enum Github {
     case searchRepository
 }
 
-extension Tumblr: Endpoint {
+extension Github: Endpoint {
     func pathWithInfo(_ info: (query: String, page: Int)) -> String {
         switch self {
         case .searchRepository: return "https://api.github.com/search/repositories?q=[info]".replacingOccurrences(of: "[info]", with: info.query) + "&per_page=20" + "&page=\(info.page)"

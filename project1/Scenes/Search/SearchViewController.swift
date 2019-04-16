@@ -34,19 +34,22 @@ class SearchViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         resultTableView.tableHeaderView = searchController.searchBar
+        resultTableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: "SearchResultTableViewCell")
 
-        resultTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(resultTableView)
+        setupConstraints()
+        
+        viewModel.delegate = self
+        resultTableView.dataSource = self
+        resultTableView.delegate = self
+    }
+    private func setupConstraints () {
+        
+        resultTableView.translatesAutoresizingMaskIntoConstraints = false
         resultTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         resultTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         resultTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         resultTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        resultTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        viewModel.delegate = self
-        resultTableView.dataSource = self
-        resultTableView.delegate = self
-        
-        
     }
 }
 
@@ -57,10 +60,9 @@ extension SearchViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = viewModel.repositoryForIndex(index: indexPath.row).name ?? "No name"
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
+
+        cell.configureCell(repository: viewModel.repositoryForIndex(index: indexPath.row))
         
         return cell
     }
@@ -88,7 +90,6 @@ extension SearchViewController : UISearchBarDelegate {
     }
 }
 
-
 extension SearchViewController : ViewModelDelegate {
     
     func needViewUpdate() {
@@ -101,8 +102,6 @@ extension SearchViewController : ViewModelDelegate {
         for i in viewModel.repositoriesCount() - viewModel.newElementsCount() ..< viewModel.repositoriesCount() {
             indexPaths.append(IndexPath(row: i, section: 0))
         }
-        
         resultTableView.insertRows(at: indexPaths, with: .automatic)
     }
-    
 }

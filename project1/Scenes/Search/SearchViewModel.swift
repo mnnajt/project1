@@ -34,7 +34,7 @@ class SearchViewModel: NSObject {
         }
         lastQuery = query
         
-        let fetcher : TumblrUserFetcher = TumblrUserFetcher.init(networking: Networking())
+        let fetcher : GithubRepositoriesFetcher = GithubRepositoriesFetcher.init(networking: Networking())
         fetcher.fetch(query: query, page: currentPage) { (response) in
             
             DispatchQueue.main.async {
