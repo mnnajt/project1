@@ -24,9 +24,6 @@ struct GithubRepositoriesFetcher {
             }
             
             let decoded = self.decodeJSON(type: RepositoriesResponse.self, from: data)
-            if let decoded = decoded {
-                print("returned: \(decoded)")
-            }
             response(decoded)
         }
     }

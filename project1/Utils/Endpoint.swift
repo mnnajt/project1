@@ -20,7 +20,7 @@ enum Github {
 extension Github: Endpoint {
     func pathWithInfo(_ info: (query: String, page: Int)) -> String {
         switch self {
-        case .searchRepository: return "https://api.github.com/search/repositories?q=[info]".replacingOccurrences(of: "[info]", with: info.query) + "&per_page=20" + "&page=\(info.page)"
+        case .searchRepository: return "https://api.github.com/search/repositories?q=[info]".replacingOccurrences(of: "[info]", with: info.query) + "&page=\(info.page)"
         }
     }
 }

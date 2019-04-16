@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    private let resultTableView = UITableView()
+    private let resultTableView : UITableView
     private let viewModel : SearchViewModel
     private let searchController = UISearchController(searchResultsController: nil)
 //    private let searchBar : UISearchBar = UISearchBar.init()
@@ -18,7 +18,10 @@ class SearchViewController: UIViewController {
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
+        self.resultTableView = UITableView()
         super.init(nibName: nil, bundle: nil)
+        
+        viewModel.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,22 +30,33 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        definesPresentationContext = true
         
+        initViews()
+        addViews()
+        setupConstraints()
+    }
+    
+    private func initViews() {
+        
+        title = "Search"
+        definesPresentationContext = true
+        view.backgroundColor = .white
+
         searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
+        
         resultTableView.tableHeaderView = searchController.searchBar
         resultTableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: "SearchResultTableViewCell")
-
-        view.addSubview(resultTableView)
-        setupConstraints()
-        
-        viewModel.delegate = self
         resultTableView.dataSource = self
         resultTableView.delegate = self
     }
+    
+    private func addViews() {
+
+        view.addSubview(resultTableView)
+    }
+    
     private func setupConstraints () {
         
         resultTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +86,10 @@ extension SearchViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        let repositoryDetailsVM = RepositoryDetailsViewModel()
+        let repositoryDetailsVC = RepositoryDetailsViewController(viewModel: repositoryDetailsVM)
+        repositoryDetailsVM.repository = viewModel.repositoryForIndex(index: indexPath.row)
+        navigationController?.pushViewController(repositoryDetailsVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -86,8 +104,11 @@ extension SearchViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchReposForQuery(searchBar.text ?? "")
-        print(searchBar.text ?? "")
     }
+//    
+//    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+//        return true
+//    }
 }
 
 extension SearchViewController : ViewModelDelegate {

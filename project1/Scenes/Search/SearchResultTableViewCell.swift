@@ -38,6 +38,9 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     private func initViews() {
+        
+        selectionStyle = .none
+        
         starsLabel.font = UIFont.systemFont(ofSize: 11)
         languageLabel.font = UIFont.systemFont(ofSize: 12)
         languageLabel.textAlignment = .right

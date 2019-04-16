@@ -20,8 +20,8 @@ class EndpointTest: XCTestCase {
     }
 
     func testExample() {
-        let output = Github.read.pathWithInfo("weirdString")
-        XCTAssertEqual(output, "https://weirdString.tumblr.com/api/read/json", "Endpoint return wrong url string")
+        let output = Github.searchRepository.pathWithInfo(("rEpo", 4))
+        XCTAssertEqual(output, "https://api.github.com/search/repositories?q=rEpo&page=4", "Endpoint return wrong url string")
     }
 
     func testPerformanceExample() {

@@ -19,6 +19,8 @@
 		5AB5ADA12264B833009A6C65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA02264B833009A6C65 /* SearchViewModel.swift */; };
 		5AB5ADA62264C0EA009A6C65 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA52264C0EA009A6C65 /* Protocols.swift */; };
 		5AB5ADA82265D09D009A6C65 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */; };
+		5AB5ADAB2265F987009A6C65 /* RepositoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADAA2265F987009A6C65 /* RepositoryDetailsViewModel.swift */; };
+		5AB5ADAD2265FA58009A6C65 /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5ADAC2265FA58009A6C65 /* RepositoryDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		5AB5ADA02264B833009A6C65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5AB5ADA52264C0EA009A6C65 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		5AB5ADAA2265F987009A6C65 /* RepositoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		5AB5ADAC2265FA58009A6C65 /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		5AB5AD8F225F574A009A6C65 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5AB5ADA92265F95D009A6C65 /* RepositoryDetails */,
 				5AB5AD9D2264B7EF009A6C65 /* Search */,
 			);
 			path = Scenes;
@@ -144,6 +149,15 @@
 				5AB5ADA72265D09D009A6C65 /* SearchResultTableViewCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		5AB5ADA92265F95D009A6C65 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5AB5ADAA2265F987009A6C65 /* RepositoryDetailsViewModel.swift */,
+				5AB5ADAC2265FA58009A6C65 /* RepositoryDetailsViewController.swift */,
+			);
+			path = RepositoryDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,7 +261,9 @@
 			files = (
 				5AB5AD9F2264B81C009A6C65 /* SearchViewController.swift in Sources */,
 				5AB5ADA12264B833009A6C65 /* SearchViewModel.swift in Sources */,
+				5AB5ADAB2265F987009A6C65 /* RepositoryDetailsViewModel.swift in Sources */,
 				5AB5ADA62264C0EA009A6C65 /* Protocols.swift in Sources */,
+				5AB5ADAD2265FA58009A6C65 /* RepositoryDetailsViewController.swift in Sources */,
 				5AB5AD94225F5938009A6C65 /* Endpoint.swift in Sources */,
 				5AB5AD70225F5547009A6C65 /* AppDelegate.swift in Sources */,
 				5AB5AD9C22649AE4009A6C65 /* ResultResponse.swift in Sources */,
