@@ -10,18 +10,19 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    private let resultTableView : UITableView
-    private let viewModel : SearchViewModel
+    private let resultTableView : UITableView = UITableView()
+    private var viewModel : SearchViewModel {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
     private let searchController = UISearchController(searchResultsController: nil)
 //    private let searchBar : UISearchBar = UISearchBar.init()
 
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
-        self.resultTableView = UITableView()
         super.init(nibName: nil, bundle: nil)
-        
-        viewModel.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,7 +77,8 @@ extension SearchViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
 
-        cell.configureCell(repository: viewModel.repositoryForIndex(index: indexPath.row))
+        let singleRepository = viewModel.repositoryForIndex(index: indexPath.row)
+        cell.configureCell(repository: singleRepository)
         
         return cell
     }
@@ -105,10 +107,6 @@ extension SearchViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchReposForQuery(searchBar.text ?? "")
     }
-//    
-//    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-//        return true
-//    }
 }
 
 extension SearchViewController : ViewModelDelegate {

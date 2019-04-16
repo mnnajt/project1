@@ -29,4 +29,13 @@ class RepositoryDetailsViewModel: NSObject {
         return repository?.description ?? ""
     }
     
+    public var url : String? {
+        return repository?.html_url
+    }
+    
+    @objc public func goToWebsite() {
+        if let url = url {
+            UIApplication.shared.open(URL.init(string: url)!, options: [:], completionHandler: nil)
+        }
+    }
 }

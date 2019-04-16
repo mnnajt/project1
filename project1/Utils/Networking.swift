@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Networking {
+class Networking {
     
     typealias CompletionHandler = (Data?, Swift.Error?) -> Void
     

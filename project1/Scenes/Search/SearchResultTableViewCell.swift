@@ -10,18 +10,13 @@ import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
 
-    private let nameLabel : UILabel
-    private let starsLabel : UILabel
-    private let languageLabel : UILabel
+    private let nameLabel : UILabel = UILabel()
+    private let starsLabel : UILabel = UILabel()
+    private let languageLabel : UILabel = UILabel()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.nameLabel = UILabel()
-        self.starsLabel = UILabel()
-        self.languageLabel = UILabel()
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         initViews()
         addViews()
         setupConstraints()
@@ -81,6 +76,4 @@ class SearchResultTableViewCell: UITableViewCell {
         }
         languageLabel.text = repository.language ?? ""
     }
-    
-
 }

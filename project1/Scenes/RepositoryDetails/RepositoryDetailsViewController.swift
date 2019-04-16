@@ -10,19 +10,18 @@ import UIKit
 
 class RepositoryDetailsViewController: UIViewController {
 
-    private let viewModel : RepositoryDetailsViewModel
-    private let nameLabel : UILabel
-    private let fullNameLabel : UILabel
-    private let descriptionLabel : UILabel
-    private let websiteButton : UIButton
+    private var viewModel : RepositoryDetailsViewModel {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
+    private let nameLabel : UILabel = UILabel()
+    private let fullNameLabel : UILabel = UILabel()
+    private let descriptionLabel : UILabel = UILabel()
+    private let websiteButton : UIButton = UIButton()
     
     init(viewModel: RepositoryDetailsViewModel) {
         self.viewModel = viewModel
-        self.nameLabel = UILabel()
-        self.fullNameLabel = UILabel()
-        self.descriptionLabel = UILabel()
-        self.websiteButton = UIButton()
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -54,6 +53,9 @@ class RepositoryDetailsViewController: UIViewController {
         descriptionLabel.font = UIFont.systemFont(ofSize: 12)
         descriptionLabel.textAlignment = .left
         descriptionLabel.numberOfLines = 0
+        
+        websiteButton.addTarget(viewModel, action: #selector(viewModel.goToWebsite), for: .touchUpInside)
+        websiteButton.setTitleColor(UIColor.blue, for: .normal)
     }
     
     private func addViews() {
@@ -82,8 +84,13 @@ class RepositoryDetailsViewController: UIViewController {
         descriptionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         descriptionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
 
+        websiteButton.translatesAutoresizingMaskIntoConstraints = false
+        websiteButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8).isActive = true
+        websiteButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        websiteButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        websiteButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
     }
-    
 }
 
 extension RepositoryDetailsViewController : ViewModelDelegate {
@@ -92,9 +99,10 @@ extension RepositoryDetailsViewController : ViewModelDelegate {
         nameLabel.text = viewModel.name
         fullNameLabel.text = viewModel.fullName
         descriptionLabel.text = viewModel.repositoryDescription
+        websiteButton.setTitle(viewModel.url, for: .normal)
     }
     
     func needViewUpdateWithNewData() {
-        
+        needViewUpdate()
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GithubRepositoriesFetcher {
+class GithubRepositoriesFetcher {
     let networking: Networking
     
     init(networking: Networking) {
