@@ -11,18 +11,16 @@ import UIKit
 class SearchViewController: UIViewController {
 
     private let resultTableView : UITableView = UITableView()
-    private var viewModel : SearchViewModel {
-        didSet {
-            viewModel.delegate = self
-        }
-    }
+    private var viewModel : SearchViewModel
     private let searchController = UISearchController(searchResultsController: nil)
 //    private let searchBar : UISearchBar = UISearchBar.init()
 
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
+
         super.init(nibName: nil, bundle: nil)
+        viewModel.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {

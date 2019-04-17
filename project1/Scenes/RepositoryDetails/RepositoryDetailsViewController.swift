@@ -10,11 +10,7 @@ import UIKit
 
 class RepositoryDetailsViewController: UIViewController {
 
-    private var viewModel : RepositoryDetailsViewModel {
-        didSet {
-            viewModel.delegate = self
-        }
-    }
+    private var viewModel : RepositoryDetailsViewModel
     private let nameLabel : UILabel = UILabel()
     private let fullNameLabel : UILabel = UILabel()
     private let descriptionLabel : UILabel = UILabel()
@@ -23,6 +19,7 @@ class RepositoryDetailsViewController: UIViewController {
     init(viewModel: RepositoryDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
